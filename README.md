@@ -1,10 +1,8 @@
-# Swaraj: Citizen-Led News Platform (Reddit-Style App)
+# Platform (Reddit-Style App)
 
-Built by [Anicca Labs](https://aniccalabs.com/), this project is a Reddit-style mobile app for citizen-led news and participation, inspired by [Swaraj](https://swarajapp.com).
-
+ this project is a Reddit-style mobile app 
 ## 🚀 Features
 
-- **Google Sign-In** via Supabase Auth
 - **Global Feed**: See all posts from the community
 - **Personalized Feed**: Posts tailored to your interests (tags, follows)
 - **Create Post**: Add title, description, tags, images, and location
