@@ -26,6 +26,11 @@
     },
     "android": {
       "package": "com.anonymous.boltexponativewind"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "80f4a803-4dcb-44ff-82b0-5840305a477b"
+      }
     }
   }
 }
