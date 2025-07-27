@@ -12,7 +12,7 @@ import {
   FlatList,
   Image,
 } from 'react-native';
-import { LogOut, User, Settings, CreditCard as Edit3, Users, FileText, X, Grid, Heart } from 'lucide-react-native';
+import { LogOut, User, Settings, CreditCard as Edit3, Users, FileText, X, Grid, Heart, HelpCircle, Shield, FileText as Terms } from 'lucide-react-native';
 import { useAuth } from '@/contexts/AuthContext';
 import { supabase } from '@/lib/supabase';
 import { ProfileStats, Post } from '@/types/database';
@@ -166,7 +166,11 @@ export default function ProfileScreen() {
         <Text style={styles.subtitle}>Manage your account</Text>
       </View>
 
-      <View style={styles.content}>
+      <ScrollView 
+        style={styles.scrollView}
+        contentContainerStyle={styles.scrollContent}
+        showsVerticalScrollIndicator={false}
+      >
         <View style={styles.profileCard}>
           <View style={styles.avatar}>
             <User size={40} color="#64748b" />
@@ -266,11 +270,33 @@ export default function ProfileScreen() {
           </TouchableOpacity>
         </View>
 
+        <View style={styles.section}>
+          <TouchableOpacity style={styles.menuItem}>
+            <HelpCircle size={20} color="#64748b" />
+            <Text style={styles.menuText}>Help & Support</Text>
+          </TouchableOpacity>
+          
+          <TouchableOpacity style={styles.menuItem}>
+            <Shield size={20} color="#64748b" />
+            <Text style={styles.menuText}>Privacy Policy</Text>
+          </TouchableOpacity>
+          
+          <TouchableOpacity style={styles.menuItem}>
+            <Terms size={20} color="#64748b" />
+            <Text style={styles.menuText}>Terms of Service</Text>
+          </TouchableOpacity>
+        </View>
+
         <TouchableOpacity style={styles.signOutButton} onPress={handleSignOut}>
           <LogOut size={20} color="#ef4444" />
           <Text style={styles.signOutText}>Sign Out</Text>
         </TouchableOpacity>
-      </View>
+
+        <View style={styles.versionContainer}>
+          <Text style={styles.versionText}>Bolt App v1.0.0</Text>
+          <Text style={styles.versionSubtext}>Made with ❤️ for the community</Text>
+        </View>
+      </ScrollView>
 
       <Modal
         visible={editModalVisible}
@@ -326,6 +352,12 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#f8fafc',
+  },
+  scrollView: {
+    flex: 1,
+  },
+  scrollContent: {
+    paddingBottom: 32,
   },
   header: {
     paddingHorizontal: 16,
@@ -570,6 +602,22 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontFamily: 'Inter-SemiBold',
     color: '#ffffff',
+  },
+  versionContainer: {
+    alignItems: 'center',
+    paddingVertical: 24,
+    marginTop: 16,
+  },
+  versionText: {
+    fontSize: 14,
+    fontFamily: 'Inter-Medium',
+    color: '#64748b',
+    marginBottom: 4,
+  },
+  versionSubtext: {
+    fontSize: 12,
+    fontFamily: 'Inter-Regular',
+    color: '#94a3b8',
   },
   saveButtonDisabled: {
     backgroundColor: '#94a3b8',

@@ -108,7 +108,7 @@ export default function PostCard({ post, onPress, onReactionUpdate, onAuthorPres
                 style={styles.avatarImage}
               />
             ) : (
-              <User size={20} color="#64748b" />
+            <User size={20} color="#64748b" />
             )}
           </TouchableOpacity>
           <TouchableOpacity 

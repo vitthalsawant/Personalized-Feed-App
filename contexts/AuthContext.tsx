@@ -61,7 +61,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
             setProfile(null);
           }
         } else if (profile) {
-          setProfile(profile);
+        setProfile(profile);
         } else {
           setProfile(null);
         }

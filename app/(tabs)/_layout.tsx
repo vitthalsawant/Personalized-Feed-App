@@ -23,14 +23,29 @@ export default function TabLayout() {
           backgroundColor: '#ffffff',
           borderTopWidth: 1,
           borderTopColor: '#e2e8f0',
-          paddingTop: 8,
-          paddingBottom: 8,
-          height: 60,
+          paddingTop: 12,
+          paddingBottom: 20,
+          height: 85,
+          paddingHorizontal: 16,
+          elevation: 12,
+          shadowColor: '#000',
+          shadowOffset: {
+            width: 0,
+            height: -3,
+          },
+          shadowOpacity: 0.15,
+          shadowRadius: 6,
+          position: 'absolute',
+          bottom: 0,
+          left: 0,
+          right: 0,
+          zIndex: 1000,
         },
         tabBarLabelStyle: {
           fontSize: 12,
           fontFamily: 'Inter-Medium',
-          marginTop: 4,
+          marginTop: 6,
+          marginBottom: 4,
         },
       }}
     >
@@ -41,6 +56,9 @@ export default function TabLayout() {
           tabBarIcon: ({ size, color }) => (
             <Home size={size} color={color} />
           ),
+          tabBarIconStyle: {
+            marginTop: 4,
+          },
         }}
       />
       <Tabs.Screen
@@ -50,6 +68,9 @@ export default function TabLayout() {
           tabBarIcon: ({ size, color }) => (
             <Heart size={size} color={color} />
           ),
+          tabBarIconStyle: {
+            marginTop: 4,
+          },
         }}
       />
       <Tabs.Screen
@@ -59,6 +80,9 @@ export default function TabLayout() {
           tabBarIcon: ({ size, color }) => (
             <Plus size={size} color={color} />
           ),
+          tabBarIconStyle: {
+            marginTop: 4,
+          },
         }}
       />
       <Tabs.Screen
@@ -68,6 +92,9 @@ export default function TabLayout() {
           tabBarIcon: ({ size, color }) => (
             <User size={size} color={color} />
           ),
+          tabBarIconStyle: {
+            marginTop: 4,
+          },
         }}
       />
       <Tabs.Screen
